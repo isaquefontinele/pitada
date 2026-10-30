@@ -1,0 +1,17 @@
+CREATE TABLE recipe (
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    servings INTEGER NOT NULL DEFAULT 1
+);
+
+selectAll:
+SELECT *
+FROM recipe
+ORDER BY name COLLATE NOCASE;
+
+insert:
+INSERT INTO recipe(name, servings)
+VALUES (?, ?);
+
+count:
+SELECT count(*) FROM recipe;
