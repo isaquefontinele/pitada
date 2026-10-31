@@ -1,0 +1,55 @@
+{
+  "$schema": "./schema/densities.schema.json",
+  "version": 1,
+  "entries": [
+    {
+      "id": "wheat-flour-all-purpose",
+      "name": { "pt": "farinha de trigo", "en": "all-purpose wheat flour" },
+      "gramsPerMl": 0.528,
+      "notes": "Spooned and levelled, not packed.",
+      "sources": [
+        {
+          "name": "USDA FoodData Central, SR Legacy 169761",
+          "url": "https://fdc.nal.usda.gov/food-details/169761/measures",
+          "detail": "1 cup (236.6 ml) = 125 g"
+        }
+      ]
+    },
+    {
+      "id": "sugar-granulated",
+      "name": { "pt": "açúcar refinado", "en": "granulated sugar" },
+      "gramsPerMl": 0.845,
+      "sources": [
+        {
+          "name": "USDA FoodData Central, SR Legacy 169655",
+          "url": "https://fdc.nal.usda.gov/food-details/169655/measures",
+          "detail": "1 cup (236.6 ml) = 200 g"
+        }
+      ]
+    },
+    {
+      "id": "milk-whole",
+      "name": { "pt": "leite integral", "en": "whole milk" },
+      "gramsPerMl": 1.031,
+      "sources": [
+        {
+          "name": "USDA FoodData Central, SR Legacy 171265",
+          "url": "https://fdc.nal.usda.gov/food-details/171265/measures",
+          "detail": "1 cup (236.6 ml) = 244 g"
+        }
+      ]
+    },
+    {
+      "id": "rice-white-long-grain-raw",
+      "name": { "pt": "arroz branco cru (agulhinha)", "en": "white long-grain rice, raw" },
+      "gramsPerMl": 0.782,
+      "sources": [
+        {
+          "name": "USDA FoodData Central, SR Legacy 169756",
+          "url": "https://fdc.nal.usda.gov/food-details/169756/measures",
+          "detail": "1 cup (236.6 ml) = 185 g"
+        }
+      ]
+    }
+  ]
+}

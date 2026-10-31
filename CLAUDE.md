@@ -36,7 +36,8 @@ shared/       Platform-independent logic (KMP library: android, iosArm64, iosSim
     data/       SQLDelight database factory and repositories
     di/         Koin modules
   src/commonMain/sqldelight/   .sq schema files (database name: PitadaDatabase)
-data/         JSON datasets (densities, substitutions, lighter swaps) — planned
+data/         JSON datasets (densities, …) validated against data/schema/*.schema.json
+scripts/      Repo tooling (validate-data.sh)
 ```
 
 Planned `shared` packages: `units`, `parser`, `scaling`, `rules`, `nutrition`, `pantry`, `data`.
@@ -55,6 +56,7 @@ Requirements: JDK 17+, Android SDK (compileSdk 36), Xcode 16+ for iOS.
 ./gradlew :shared:testDebugUnitTest      # shared tests, JVM only (fast)
 ./gradlew :composeApp:linkDebugFrameworkIosSimulatorArm64   # iOS framework
 open iosApp/iosApp.xcodeproj             # run on iOS
+./scripts/validate-data.sh               # validate data/ against its schemas (Node.js 18+)
 ```
 
 ## Conventions
@@ -65,4 +67,5 @@ open iosApp/iosApp.xcodeproj             # run on iOS
 - Pure functions for conversion/scaling/parsing; test them in `shared/src/commonTest`.
 - New dependencies go through the version catalog; avoid anything that needs network access.
 - Never commit secrets, signing keys or `local.properties` (see `.gitignore`).
-- Datasets in `data/` must cite a source per entry.
+- Datasets in `data/` must cite a source per entry. Each `data/<name>.json` has a matching
+  `data/schema/<name>.schema.json`; CI runs `scripts/validate-data.sh`.
